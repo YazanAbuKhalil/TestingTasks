@@ -1,5 +1,7 @@
 describe("sorting functionality test", () => {
-  
+  beforeEach(() => {
+    cy.viewport("iphone-7")
+ })
   const IsCorrectSort = (items, correctedSort) => {
     for (let i = 0; i < items.length; i++) {
       if (items[i] !== correctedSort[i]) return false;

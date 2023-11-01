@@ -1,4 +1,8 @@
 describe("user journy senario", () => {
+  beforeEach(() => {
+    cy.viewport("iphone-7")
+ })
+ 
   it("test user journy", () => {
     cy.visit("/inventory.html");
 

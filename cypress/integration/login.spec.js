@@ -1,4 +1,8 @@
 describe("Login functionality", () => {
+  beforeEach(() => {
+     cy.viewport("iphone-7")
+  })
+
   const Login = (username, password) => {
     cy.visit("/");
 
