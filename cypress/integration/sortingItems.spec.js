@@ -1,7 +1,4 @@
 describe("sorting functionality test", () => {
-  beforeEach(() => {
-    cy.viewport("iphone-7")
- })
   const IsCorrectSort = (items, correctedSort) => {
     for (let i = 0; i < items.length; i++) {
       if (items[i] !== correctedSort[i]) return false;
@@ -23,7 +20,6 @@ describe("sorting functionality test", () => {
 
   const testSortItems = (sortBy = "name", order = "az") => {
     const items = [];
-    let sortedItems = [];
 
     cy.visit("/inventory.html");
 
@@ -34,8 +30,8 @@ describe("sorting functionality test", () => {
       .each(($item) =>
         items.push(sortBy === "name" ? $item.text() : +$item.text().slice(1))
       )
-      .then(() => (sortedItems = sortByTypeAndOrder(items, sortBy, order)))
-      .then(() =>
+      .then(() => sortByTypeAndOrder(items, sortBy, order))
+      .then((sortedItems) =>
         cy.wrap(IsCorrectSort(items, sortedItems)).should("eql", true)
       );
   };

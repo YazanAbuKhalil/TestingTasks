@@ -1,8 +1,5 @@
 describe("user journy senario", () => {
-  beforeEach(() => {
-    cy.viewport("iphone-7")
- })
- 
+
   it("test user journy", () => {
     cy.visit("/inventory.html");
 
@@ -28,10 +25,10 @@ describe("user journy senario", () => {
       .should("have.text", "Test.allTheThings() T-Shirt (Red)");
 
 
-    // Remove one element form the cart
+    // Remove first element form the cart
     cy.get(".cart_item").first().find(".cart_button").click();
 
-    // check the element was removes successfully
+    // check the element was removed successfully
     cy.get(".cart_item").should("have.length", 1);
 
     // make checkout proccess

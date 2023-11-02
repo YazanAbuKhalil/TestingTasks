@@ -1,9 +1,5 @@
 describe("Login functionality", () => {
-  beforeEach(() => {
-     cy.viewport("iphone-7")
-  })
-
-  const Login = (username, password) => {
+  const login = (username, password) => {
     cy.visit("/");
 
     username && cy.get("#user-name").type(username);
@@ -13,13 +9,13 @@ describe("Login functionality", () => {
   };
 
   it("login successfully", () => {
-    Login("standard_user", "secret_sauce");
+    login("standard_user", "secret_sauce");
 
     cy.url().should("contain", "/inventory.html");
   });
 
   it("Login with invalid credentials", () => {
-    Login("invalid_user", "invalid_pass");
+    login("invalid_user", "invalid_pass");
 
     cy.get("[data-test='error']").should(
       "have.text",
@@ -28,7 +24,7 @@ describe("Login functionality", () => {
   });
 
   it("Login with a locked user", () => {
-    Login("locked_out_user", "secret_sauce");
+    login("locked_out_user", "secret_sauce");
 
     cy.get("[data-test='error']").should(
       "have.text",
@@ -37,7 +33,7 @@ describe("Login functionality", () => {
   });
 
   it("login with empty username", () => {
-    Login("", "secret_sauce");
+    login("", "secret_sauce");
 
     cy.get("[data-test='error']").should(
       "have.text",
@@ -46,7 +42,7 @@ describe("Login functionality", () => {
   });
 
   it("Login with empty password", () => {
-    Login("standard_user", "");
+    login("standard_user", "");
 
     cy.get("[data-test='error']").should(
       "have.text",

@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run": "cypress run",
+    "cy:run-login:mobile": "cypress run --headed --no-exit --spec  'cypress/integration/login.spec.js' --config userAgent=mobile",
+    "cy:run-login:desktop": "cypress run --headed --no-exit  --spec 'cypress/integration/login.spec.js' --config userAgent=desktop",
+    "cy:run-userJourny:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/userJourny.spec.js' --config userAgent=desktop",
+    "cy:run-userJourny:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/userJourny.spec.js' --config userAgent=mobile",
+    "cy:run-sortingItems:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=desktop",
+    "cy:run-sortingItems:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=mobile "
   },
   "keywords": [],
   "author": "",
