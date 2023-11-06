@@ -1,52 +1,48 @@
-describe("Login functionality", () => {
-  const login = (username, password) => {
-    cy.visit("/");
+import loginPage from "../Pages/loginPage";
 
-    username && cy.get("#user-name").type(username);
-    password && cy.get("#password").type(password);
+describe("Login Functionality", () => {
+  beforeEach(() => cy.visit(loginPage.url));
 
-    cy.get("#login-button").click();
-  };
+  const validUser = Cypress.env("validUser");
+  const invalid_user = Cypress.env("invalidUser");
+  const lockedUser = Cypress.env("lockedUser");
+  const validPassword = Cypress.env("validPassword");
+  const invalidPassword = Cypress.env("invalidPassword");
 
-  it("login successfully", () => {
-    login("standard_user", "secret_sauce");
-
-    cy.url().should("contain", "/inventory.html");
+  it("should login successfully", () => {
+    loginPage.login(validUser, validPassword);
+    cy.url().should("contain", loginPage.productsPageUrl);
   });
 
-  it("Login with invalid credentials", () => {
-    login("invalid_user", "invalid_pass");
-
-    cy.get("[data-test='error']").should(
+  it("should not Login with invalid credentials", () => {
+    loginPage.login(invalid_user, invalidPassword);
+    cy.get(loginPage.errorMessage).should(
       "have.text",
-      "Epic sadface: Username and password do not match any user in this service"
+      loginPage.errorMessageInvalid
     );
   });
 
-  it("Login with a locked user", () => {
-    login("locked_out_user", "secret_sauce");
-
-    cy.get("[data-test='error']").should(
+  it("should not Login with a locked user", () => {
+    loginPage.login(lockedUser, validPassword);
+    cy.get(loginPage.errorMessage).should(
       "have.text",
-      "Epic sadface: Sorry, this user has been locked out."
+      loginPage.errorMessageLocked
     );
   });
 
-  it("login with empty username", () => {
-    login("", "secret_sauce");
-
-    cy.get("[data-test='error']").should(
+  it("should not login with empty username", () => {
+    loginPage.login("", validPassword);
+    cy.get(loginPage.errorMessage).should(
       "have.text",
-      "Epic sadface: Username is required"
+      loginPage.errorMessageEmptyUserName
     );
   });
 
-  it("Login with empty password", () => {
-    login("standard_user", "");
-
-    cy.get("[data-test='error']").should(
+  it("should not Login with empty password", () => {
+    loginPage.login(validUser, "");
+    cy.get(loginPage.errorMessage).should(
       "have.text",
-      "Epic sadface: Password is required"
+      loginPage.errorMessageEmptyPassword
     );
   });
 });

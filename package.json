@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run",
-    "cy:run-login:mobile": "cypress run --headed --no-exit --spec  'cypress/integration/login.spec.js' --config userAgent=mobile",
-    "cy:run-login:desktop": "cypress run --headed --no-exit  --spec 'cypress/integration/login.spec.js' --config userAgent=desktop",
-    "cy:run-userJourny:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/userJourny.spec.js' --config userAgent=desktop",
-    "cy:run-userJourny:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/userJourny.spec.js' --config userAgent=mobile",
+    "cy:run-login:mobile": "cypress run --headed --no-exit --env validUser=standard_user,invalidUser=invalidUser,validPassword=secret_sauce,invalidPassword=invalidPassword,lockedUser=locked_out_user --spec  'cypress/integration/login.spec.js' --config userAgent=mobile",
+    "cy:run-login:desktop": "cypress run --headed --no-exit --env validUser=standard_user,invalidUser=invalidUser,validPassword=secret_sauce,invalidPassword=invalidPassword,lockedUser=locked_out_user  --spec 'cypress/integration/login.spec.js' --config userAgent=desktop",
+    "cy:run-userOrder:desktop": "cypress run --headed --no-exit --env firstName=QaUser,lastName=QaUser,postalCode=00000 --spec 'cypress/integration/userOrder.spec.js' --config userAgent=desktop",
+    "cy:run-userOrder:mobile": "cypress run --headed --no-exit --env firstName=QaUser,lastName=QaUser,postalCode=00000 --spec 'cypress/integration/userOrder.spec.js' --config userAgent=mobile",
     "cy:run-sortingItems:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=desktop",
     "cy:run-sortingItems:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=mobile "
   },
