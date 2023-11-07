@@ -1,0 +1,15 @@
+{
+    "squadName": "Yazan Abu Khalil",
+    "homeTown": "Metro City",
+    "formed": 2017,
+    "secretBase": "Super tower",
+    "active": true,
+    "members": [
+      {
+        "name": "ahmad ali",
+        "age": 21,
+        "secretIdentity": "Dan Jukes",
+        "powers": ["Radiation resistance", "Radiation blast"]
+      }
+    ]
+  } 

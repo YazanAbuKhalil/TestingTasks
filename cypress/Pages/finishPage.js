@@ -3,5 +3,4 @@ class finishPage {
   completeOrderHeaderText =  "THANK YOU FOR YOUR ORDER";
   completeOrderUrl = "/checkout-complete.html";
 }
-
 module.exports = new finishPage();

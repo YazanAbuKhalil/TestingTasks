@@ -18,5 +18,4 @@ class LoginPage {
     cy.get(this.loginBtn).click();
   }
 }
-
 module.exports = new LoginPage();

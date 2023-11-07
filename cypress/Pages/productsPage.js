@@ -33,5 +33,4 @@ class productsPage {
       .then((sortedItems) => expect(items).to.deep.eq(sortedItems));
   }
 }
-
 module.exports = new productsPage();

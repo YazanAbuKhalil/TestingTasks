@@ -5,5 +5,4 @@ class cartPage {
   checkoutBtn = ".checkout_button";
   removeBtn = ".cart_button";
 }
-
 module.exports = new cartPage();

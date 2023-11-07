@@ -4,5 +4,4 @@ class checkoutPage {
   postalCodeInput = "[data-test='postalCode']";
   continueBtn = "[value='CONTINUE']";
 }
-
 module.exports = new checkoutPage();
