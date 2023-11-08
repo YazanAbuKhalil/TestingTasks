@@ -10,7 +10,9 @@
     "cy:run-userOrder:desktop": "cypress run --headed --no-exit --env firstName=QaUser,lastName=QaUser,postalCode=00000 --spec 'cypress/integration/userOrder.spec.js' --config userAgent=desktop",
     "cy:run-userOrder:mobile": "cypress run --headed --no-exit --env firstName=QaUser,lastName=QaUser,postalCode=00000 --spec 'cypress/integration/userOrder.spec.js' --config userAgent=mobile",
     "cy:run-sortingItems:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=desktop",
-    "cy:run-sortingItems:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=mobile "
+    "cy:run-sortingItems:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/sortingItems.spec.js' --config userAgent=mobile ",
+    "cy:run-cryptoPrices:mobile": "cypress run --headed --no-exit --spec 'cypress/integration/cryptoPrices.spec.js' --config userAgent=mobile",
+    "cy:run-cryptoPrices:desktop": "cypress run --headed --no-exit --spec 'cypress/integration/cryptoPrices.spec.js' --config userAgent=desktop"
   },
   "keywords": [],
   "author": "",

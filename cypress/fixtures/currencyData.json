@@ -1,0 +1,61 @@
+{
+  "assets": [
+    {
+      "symbol": "bitcoin",
+      "displaySymbol": "btc",
+      "name": "Bitcoin",
+      "slug": "bitcoin-btc",
+      "logo": "https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579",
+      "temporaryDataDelay": false,
+      "price": 34833,
+      "percentage": -0.009972157508949373,
+      "percentage_1h": -0.00040206777713957495,
+      "percentage_7d": 0.015385063667356275,
+      "changeValue": -351,
+      "marketCap": 679408796775,
+      "volume": 11640393636,
+      "FullCount": null,
+      "rank": 1,
+      "Status": "active"
+    },
+    {
+      "symbol": "ethereum",
+      "displaySymbol": "eth",
+      "name": "Ethereum",
+      "slug": "ethereum-eth",
+      "logo": "https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880",
+      "temporaryDataDelay": false,
+      "price": 1877.63,
+      "percentage": -0.016909047125461964,
+      "percentage_1h": 0.001203773243210128,
+      "percentage_7d": 0.044159021406727866,
+      "changeValue": -32.299999999999955,
+      "marketCap": 225477787582,
+      "volume": 13706209314,
+      "FullCount": null,
+      "rank": 2,
+      "Status": "active"
+    },
+    {
+      "symbol": "tether",
+      "displaySymbol": "usdt",
+      "name": "Tether",
+      "slug": "tether-usdt",
+      "logo": "https://assets.coingecko.com/coins/images/325/small/Tether.png?1668148663",
+      "temporaryDataDelay": false,
+      "price": 1.001,
+      "percentage": 0,
+      "percentage_1h": 0,
+      "percentage_7d": 0,
+      "changeValue": 0,
+      "marketCap": 85733762598,
+      "volume": 21207020268,
+      "FullCount": null,
+      "rank": 3,
+      "Status": "active"
+    }
+  ],
+  "total": 7979,
+  "hasTemporaryDataDelay": false,
+  "source": "coingecko"
+}
