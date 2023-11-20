@@ -1,4 +1,4 @@
-import productsPage from "../Pages/productsPage";
+const productsPage = require ("../Pages/productsPage");
 
 describe("sorting functionality test", () => {
   beforeEach(() => cy.visit(productsPage.url));

@@ -1,8 +1,8 @@
-import productsPage, { productItems } from "../Pages/productsPage";
-import cartPage from "../Pages/cartPage";
-import checkoutPage from "../Pages/checkoutYourInformationPage";
-import checkoutOverviewPage from "../Pages/checkoutOverviewPage";
-import finishPage from "../Pages/finishPage";
+const cartPage = require("../Pages/cartPage");
+const productsPage = require("../Pages/productsPage");
+const checkoutPage = require("../Pages/checkoutYourInformationPage");
+const checkoutOverviewPage = require("../Pages/checkoutOverviewPage");
+const finishPage = require("../Pages/finishPage");
 
 describe("User Order", () => {
   const firstName = Cypress.env("firstName");

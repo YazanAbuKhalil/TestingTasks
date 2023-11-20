@@ -1,13 +1,13 @@
-import loginPage from "../Pages/loginPage";
+const loginPage = require("../Pages/loginPage");
 
 describe("Login Functionality", () => {
   beforeEach(() => cy.visit(loginPage.url));
 
-  const validUser = Cypress.env("validUser");
-  const invalid_user = Cypress.env("invalidUser");
-  const lockedUser = Cypress.env("lockedUser");
-  const validPassword = Cypress.env("validPassword");
-  const invalidPassword = Cypress.env("invalidPassword");
+  const validUser:string = Cypress.env("validUser");
+  const invalid_user:string = Cypress.env("invalidUser");
+  const lockedUser:string = Cypress.env("lockedUser");
+  const validPassword:string = Cypress.env("validPassword");
+  const invalidPassword:string = Cypress.env("invalidPassword");
 
   it("should login successfully", () => {
     loginPage.login(validUser, validPassword);

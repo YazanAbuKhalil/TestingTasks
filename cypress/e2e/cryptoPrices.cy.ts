@@ -1,4 +1,4 @@
-import cryptoPricesPage from "../Pages/cryptoPricesPage";
+const cryptoPricesPage = require("../Pages/cryptoPricesPage");
 
 describe("Crypto Prices Functionality", () => {
   it("should return percentage change per hour with correct colors", () => {
